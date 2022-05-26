@@ -1,4 +1,5 @@
 import 'package:developers_community/const/text_styles.dart';
+import 'package:developers_community/screens/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -56,7 +57,7 @@ class SplashScreen extends StatelessWidget{
               ),
               child: MaterialButton(
                 onPressed: (){
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
                 },
                 elevation: 10,
                 minWidth: 170,
