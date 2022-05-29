@@ -2,12 +2,13 @@ import 'package:developers_community/const/text_styles.dart';
 import 'package:developers_community/screens/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SplashScreen extends StatelessWidget{
+class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -21,21 +22,31 @@ class SplashScreen extends StatelessWidget{
           children: [
             Column(
               children: [
-                Image.asset('assets/images/logo.png'),
+                SizedBox(height: 20),
+                Image.asset('assets/images/logo.png',
+                    width: 130, height: 140.62),
+                SizedBox(height: 20),
                 Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('< ', style: GoogleFonts.roboto(textStyle: title_diamond_notation)),
-                        Text('Developers', style: GoogleFonts.roboto(textStyle: title_text)),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Community ', style: GoogleFonts.roboto(textStyle: title_text)),
-                        Text('/>', style: GoogleFonts.roboto(textStyle: title_diamond_notation)),
+                        SizedBox(
+                          width: 250,
+                          height: 98,
+                          child: AnimatedTextKit(
+                            animatedTexts: [
+                              TypewriterAnimatedText(
+                                  '< Developers Community />',
+                                  speed: Duration(milliseconds: 250),
+                                  textStyle: title_diamond_notation)
+                            ],
+                            isRepeatingAnimation: true,
+                            repeatForever: true,
+                            displayFullTextOnTap: false,
+                            stopPauseOnTap: false,
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -43,30 +54,52 @@ class SplashScreen extends StatelessWidget{
               ],
             ),
             Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment(0.8, 1),
-                  colors: <Color>[
-                    Color.fromRGBO(0, 59, 129, 1),
-                    Color.fromRGBO(0, 132, 255, 1),
-                  ],
-                  tileMode: TileMode.mirror,
-                ),
-                borderRadius: BorderRadius.circular(8)
-              ),
-              child: MaterialButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+              height: 50.0,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()));
                 },
-                elevation: 10,
-                minWidth: 170,
-                height: 50,
-                color: Colors.transparent,
-                child: Text('Empezar', style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+                padding: EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color.fromRGBO(0, 59, 129, 1),
+                          Color.fromRGBO(0, 132, 255, 1),
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(20.0)),
+                  child: Container(
+                      constraints:
+                          BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Entrar  ",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.roboto(
+                                    textStyle: splashBtnTextStyle),
+                              ),
+                              Icon(
+                                FontAwesomeIcons.arrowRight,
+                                size: 20, //Icon Size
+                                color: Colors.white, //Color Of Icon
+                              ),
+                            ],
+                          )
+                        ],
+                      )),
+                ),
               ),
             ),
           ],
@@ -74,5 +107,4 @@ class SplashScreen extends StatelessWidget{
       ),
     );
   }
-
 }
