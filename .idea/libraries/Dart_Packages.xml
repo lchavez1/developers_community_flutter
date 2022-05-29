@@ -2,6 +2,13 @@
   <library name="Dart Packages" type="DartPackagesLibraryType">
     <properties>
       <option name="packageNameToDirsMap">
+        <entry key="animated_text_kit">
+          <value>
+            <list>
+              <option value="$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="async">
           <value>
             <list>
@@ -97,6 +104,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/packages/flutter_test/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="font_awesome_flutter">
+          <value>
+            <list>
+              <option value="$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-10.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -306,6 +320,7 @@
       </option>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-4.2.1/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0/lib" />
@@ -318,6 +333,7 @@
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.2.1/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib" />
+      <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-10.1.0/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-3.0.1/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4/lib" />
       <root url="file://$USER_HOME$/Documents/flutter_windows_2.8.1-stable/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib" />
