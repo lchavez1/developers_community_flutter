@@ -33,6 +33,8 @@
 /windows/
 /web/
 /android/
+/linux/
+/macos/
 
 # Web related
 lib/generated_plugin_registrant.dart
