@@ -3,12 +3,18 @@ import 'package:developers_community/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../const/text_styles.dart';
 
 class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    void _showToast() => Fluttertoast.showToast(
+          msg: 'Deshabilitado temporalmente',
+          toastLength: Toast.LENGTH_SHORT,
+        );
+
     double val = MediaQuery.of(context).size.height / 8;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -150,20 +156,64 @@ class RegisterPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  FontAwesomeIcons.github,
-                  size: 60,
+                ElevatedButton(
+                  onPressed: _showToast,
+                  child: Icon(FontAwesomeIcons.github, color: Colors.black),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(CircleBorder()),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                    backgroundColor: MaterialStateProperty.all(
+                        Colors.white), // <-- Button color
+                  ),
                 ),
-                Icon(
-                  FontAwesomeIcons.google,
-                  size: 60,
+                ElevatedButton(
+                  onPressed: _showToast,
+                  child: Icon(FontAwesomeIcons.google, color: Colors.black),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(CircleBorder()),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                    backgroundColor: MaterialStateProperty.all(
+                        Colors.white), // <-- Button color
+                  ),
                 ),
-                Icon(
-                  Icons.facebook,
-                  size: 60,
+                ElevatedButton(
+                  onPressed: _showToast,
+                  child: Icon(FontAwesomeIcons.facebook, color: Colors.black),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(CircleBorder()),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                    backgroundColor: MaterialStateProperty.all(
+                        Colors.white), // <-- Button color
+                  ),
                 ),
               ],
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  height: 125,
+                ),
+                Text('Si ya tienes una cuenta',
+                    style: GoogleFonts.roboto(
+                        color: Colors.grey[500], fontSize: 18)),
+                SizedBox(
+                  height: 5,
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: GoogleFonts.roboto(
+                        color: Color.fromRGBO(0, 132, 255, 1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                  onPressed: () {},
+                  child: const Text('INICIA SESIÓN'),
+                ),
+              ],
+            )
           ],
         ),
       ),
