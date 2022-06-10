@@ -21,3 +21,10 @@ const splashBtnTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.white,
 );
+
+const formTitle = TextStyle(
+  fontStyle: FontStyle.normal,
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+);
