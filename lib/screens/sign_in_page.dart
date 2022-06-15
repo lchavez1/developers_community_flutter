@@ -1,4 +1,4 @@
-import 'package:developers_community/screens/sign_in_page.dart';
+import 'package:developers_community/screens/register_page.dart';
 import 'package:developers_community/screens/splash_screen.dart';
 import 'package:developers_community/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +8,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import '../const/text_styles.dart';
 
-class RegisterPage extends StatelessWidget {
+class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _showToast() => Fluttertoast.showToast(
-          msg: 'Deshabilitado temporalmente',
-          toastLength: Toast.LENGTH_SHORT,
-        );
+      msg: 'Deshabilitado temporalmente',
+      toastLength: Toast.LENGTH_SHORT,
+    );
 
     double val = MediaQuery.of(context).size.height / 8;
     return Scaffold(
@@ -35,11 +35,11 @@ class RegisterPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Crea una',
+                    'Iniciar sesión',
                     style: GoogleFonts.roboto(textStyle: formTitle),
                   ),
                   Text(
-                    'nueva cuenta',
+                    'en tu cuenta',
                     style: GoogleFonts.roboto(textStyle: formTitle),
                   )
                 ],
@@ -69,7 +69,7 @@ class RegisterPage extends StatelessWidget {
                         hintText: 'E-mail',
                         hintStyle: GoogleFonts.roboto(color: Colors.grey[400]),
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                        EdgeInsets.symmetric(vertical: 3, horizontal: 3),
                         prefixIcon: Icon(Icons.mail, color: Colors.grey[400])),
                   ),
                 ),
@@ -94,7 +94,7 @@ class RegisterPage extends StatelessWidget {
                         hintText: 'Contraseña',
                         hintStyle: GoogleFonts.roboto(color: Colors.grey[400]),
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                        EdgeInsets.symmetric(vertical: 3, horizontal: 3),
                         prefixIcon: Icon(Icons.lock, color: Colors.grey[400])),
                   ),
                 ),
@@ -125,7 +125,7 @@ class RegisterPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0)),
                   child: Container(
                       constraints:
-                          BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
                       alignment: Alignment.center,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -134,7 +134,7 @@ class RegisterPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Registrarse",
+                                "Entrar",
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.roboto(
                                     textStyle: splashBtnTextStyle),
@@ -147,9 +147,22 @@ class RegisterPage extends StatelessWidget {
               ),
             ),
             SizedBox(
+              height: 24,
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: GoogleFonts.roboto(
+                    color: Color.fromRGBO(0, 132, 255, 1),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
+              onPressed: () {},
+              child: const Text('¿olvidaste tu contraseña?'),
+            ),
+            SizedBox(
               height: 46,
             ),
-            Text('Puedes continuar con',
+            Text('Puedes iniciar sesión con',
                 style: GoogleFonts.roboto(color: Colors.grey[500])),
             SizedBox(
               height: 26,
@@ -195,9 +208,9 @@ class RegisterPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  height: 125,
+                  height: 86,
                 ),
-                Text('Si ya tienes una cuenta',
+                Text('Si aún no tienes una cuenta',
                     style: GoogleFonts.roboto(
                         color: Colors.grey[500], fontSize: 18)),
                 SizedBox(
@@ -212,9 +225,9 @@ class RegisterPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignInPage()));
+                        MaterialPageRoute(builder: (context) => RegisterPage()));
                   },
-                  child: const Text('INICIA SESIÓN'),
+                  child: const Text('REGISTRATE GRATIS'),
                 ),
               ],
             )

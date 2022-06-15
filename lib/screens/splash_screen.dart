@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/image.png"),
             fit: BoxFit.cover,
@@ -22,10 +22,10 @@ class SplashScreen extends StatelessWidget {
           children: [
             Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Image.asset('assets/images/logo.png',
                     width: 130, height: 140.62),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Column(
                   children: [
                     Row(
@@ -62,7 +62,7 @@ class SplashScreen extends StatelessWidget {
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
-                padding: EdgeInsets.all(0.0),
+                padding: const EdgeInsets.all(0.0),
                 child: Ink(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
