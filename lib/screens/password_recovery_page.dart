@@ -9,13 +9,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 import '../const/text_styles.dart';
 
-class RegisterPage extends StatelessWidget {
+class PasswordRecoveryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _showToast() => Fluttertoast.showToast(
-          msg: 'Deshabilitado temporalmente',
-          toastLength: Toast.LENGTH_SHORT,
-        );
+      msg: 'Deshabilitado temporalmente',
+      toastLength: Toast.LENGTH_SHORT,
+    );
 
     double val = MediaQuery.of(context).size.height / 8;
     return Scaffold(
@@ -36,11 +36,11 @@ class RegisterPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Crea una',
+                    'Recupera tu',
                     style: GoogleFonts.roboto(textStyle: formTitle),
                   ),
                   Text(
-                    'nueva cuenta',
+                    'contraseña',
                     style: GoogleFonts.roboto(textStyle: formTitle),
                   )
                 ],
@@ -70,34 +70,12 @@ class RegisterPage extends StatelessWidget {
                         hintText: 'E-mail',
                         hintStyle: GoogleFonts.roboto(color: Colors.grey[400]),
                         contentPadding:
-                            EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+                        EdgeInsets.symmetric(vertical: 3, horizontal: 3),
                         prefixIcon: Icon(Icons.mail, color: Colors.grey[400])),
                   ),
                 ),
                 SizedBox(
                   height: 26,
-                ),
-                Container(
-                  width: 330,
-                  child: TextField(
-                    obscureText: true,
-                    keyboardType: TextInputType.text,
-                    style: GoogleFonts.roboto(
-                      color: Colors.grey[600],
-                      fontWeight: FontWeight.normal,
-                    ),
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        border: OutlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(50)),
-                        hintText: 'Contraseña',
-                        hintStyle: GoogleFonts.roboto(color: Colors.grey[400]),
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 3, horizontal: 3),
-                        prefixIcon: Icon(Icons.lock, color: Colors.grey[400])),
-                  ),
                 ),
               ],
             ),
@@ -108,7 +86,7 @@ class RegisterPage extends StatelessWidget {
               height: 50.0,
               child: RaisedButton(
                 onPressed: () {
-                  //Navigator.push(context,MaterialPageRoute(builder: (context) => RegisterPage()));
+                  _showToast();
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
@@ -126,7 +104,7 @@ class RegisterPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0)),
                   child: Container(
                       constraints:
-                          BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
                       alignment: Alignment.center,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -135,10 +113,16 @@ class RegisterPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Registrarse",
+                                "Continuar",
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.roboto(
                                     textStyle: splashBtnTextStyle),
+                              ),
+                              SizedBox(width: 4,),
+                              Icon(
+                                FontAwesomeIcons.arrowRight,
+                                size: 20, //Icon Size
+                                color: Colors.white, //Color Of Icon
                               ),
                             ],
                           )
@@ -147,75 +131,24 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 46,
-            ),
-            Text('Puedes continuar con',
-                style: GoogleFonts.roboto(color: Colors.grey[500])),
-            SizedBox(
-              height: 26,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: _showToast,
-                  child: SvgPicture.asset('assets/icons/icons8-github.svg', width: 40,),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(CircleBorder()),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.white), // <-- Button color
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: _showToast,
-                  child: SvgPicture.asset('assets/icons/icons8-google.svg', width: 40,),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(CircleBorder()),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.white), // <-- Button color
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: _showToast,
-                  child: SvgPicture.asset('assets/icons/icons8-facebook.svg', width: 40,),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(CircleBorder()),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.white), // <-- Button color
-                  ),
-                ),
-              ],
-            ),
+            SizedBox(height: 8,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SizedBox(
-                  height: 125,
-                ),
-                Text('Si ya tienes una cuenta',
-                    style: GoogleFonts.roboto(
-                        color: Colors.grey[500], fontSize: 18)),
-                SizedBox(
-                  height: 5,
-                ),
                 TextButton(
                   style: TextButton.styleFrom(
                     textStyle: GoogleFonts.roboto(
-                        color: Color.fromRGBO(0, 132, 255, 1),
+                        color: Colors.grey,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontSize: 18),
                   ),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => SignInPage()));
                   },
-                  child: const Text('INICIA SESIÓN'),
+                  child: const Text('cancelar', style: TextStyle(color: Colors.grey),),
                 ),
               ],
             )

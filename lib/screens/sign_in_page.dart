@@ -1,3 +1,4 @@
+import 'package:developers_community/screens/password_recovery_page.dart';
 import 'package:developers_community/screens/register_page.dart';
 import 'package:developers_community/screens/splash_screen.dart';
 import 'package:developers_community/widgets/custom_app_bar.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../const/text_styles.dart';
 
@@ -156,7 +158,10 @@ class SignInPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PasswordRecoveryPage()));
+              },
               child: const Text('¿olvidaste tu contraseña?'),
             ),
             SizedBox(
@@ -172,7 +177,7 @@ class SignInPage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: _showToast,
-                  child: Icon(FontAwesomeIcons.github, color: Colors.black),
+                  child: SvgPicture.asset('assets/icons/icons8-github.svg', width: 40,),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(CircleBorder()),
                     padding: MaterialStateProperty.all(EdgeInsets.all(20)),
@@ -182,7 +187,7 @@ class SignInPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: _showToast,
-                  child: Icon(FontAwesomeIcons.google, color: Colors.black),
+                  child: SvgPicture.asset('assets/icons/icons8-google.svg', width: 40,),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(CircleBorder()),
                     padding: MaterialStateProperty.all(EdgeInsets.all(20)),
@@ -192,7 +197,7 @@ class SignInPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: _showToast,
-                  child: Icon(FontAwesomeIcons.facebook, color: Colors.black),
+                  child: SvgPicture.asset('assets/icons/icons8-facebook.svg', width: 40,),
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(CircleBorder()),
                     padding: MaterialStateProperty.all(EdgeInsets.all(20)),
