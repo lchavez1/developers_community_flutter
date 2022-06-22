@@ -9,6 +9,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../const/text_styles.dart';
+import 'main_page.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -108,7 +109,7 @@ class SignInPage extends StatelessWidget {
               height: 50.0,
               child: RaisedButton(
                 onPressed: () {
-                  //Navigator.push(context,MaterialPageRoute(builder: (context) => RegisterPage()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => MainPage()));
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0)),
